@@ -1,4 +1,5 @@
 import styles from './Button.module.scss'
+import cx from 'classnames'
 
 interface ButtonProps {
   children: string
@@ -14,8 +15,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={styles.button}
-      // className={cx(styles.button, className)}
+      className={cx(styles.button, className)}
     >
       {children}
     </button>

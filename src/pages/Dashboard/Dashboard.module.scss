@@ -1,11 +1,15 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  max-width: 954px;
-  height: 790px;
+  max-width: 1054px;
+  height: max-content;
   margin: 0 auto;
   background-color: #FAFAFA;
   padding: 40px 48px;
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 .plug {
   width: 100%;
@@ -17,8 +21,8 @@
 }
 
 .plug__title {
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 22px;
   font-weight: 500;
   margin: 0 0 50px;
 }

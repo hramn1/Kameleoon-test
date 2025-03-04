@@ -1,5 +1,5 @@
 import React, { useEffect, useState }  from 'react';
-import './App.css';
+import './App.module.scss';
 import {Dashboard} from "./pages/Dashboard/Dashboard";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import {fetchAPI} from "./api/api";
