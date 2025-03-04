@@ -1,4 +1,3 @@
-
 import styles from './Finalize.module.css'
 import backIcon from '../../img/icons/back-icon.svg'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -16,7 +15,6 @@ export const Finalize = () => {
       <div
           tabIndex={0}
           onKeyDown={(evt)=>{
-              console.log(evt)
               if (evt.key === 'Escape'){
                   navigate(-1)
               }
