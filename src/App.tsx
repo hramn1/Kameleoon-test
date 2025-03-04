@@ -33,6 +33,8 @@ function App() {
                 tests={tests}
             />}
           />
+            <Route path='/:state/:id' element={<TestPage />} />
+
         </Routes>
       </Router>
   );

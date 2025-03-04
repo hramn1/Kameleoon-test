@@ -1,0 +1,23 @@
+.testPage__text {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+}
+
+.testPage__backButton {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  background-color: inherit;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.testPage__backButtonIcon {
+  margin-right: 19px;
+}
