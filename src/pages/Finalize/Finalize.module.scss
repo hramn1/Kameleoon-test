@@ -1,0 +1,38 @@
+.finalize-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1054px;
+  height: max-content;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  padding: 40px 48px;
+  min-height: 800px;
+  &__title{
+    margin: 10px 0 0;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 700;
+    font-family: Montserrat, Arial, sans-serif;
+    text-transform: capitalize;
+  }
+  &__text{
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+  }
+  &__button{
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    background-color: inherit;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+  &__icon{
+    margin-right: 19px;
+
+  }
+}

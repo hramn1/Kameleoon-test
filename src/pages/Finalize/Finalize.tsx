@@ -1,4 +1,4 @@
-import styles from './Finalize.module.css'
+import styles from './Finalize.module.scss'
 import backIcon from '../../img/icons/back-icon.svg'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -20,16 +20,16 @@ export const Finalize = () => {
               }
           }}
           className={styles['finalize-page']}>
-          <h2 className={styles.testPage__text}>{state}</h2>
-          <p>{description}</p>
+          <h2 className={styles['finalize-page__title']}>{state}</h2>
+          <p className={styles['finalize-page__text']}>{description}</p>
           <button
               onClick={() => navigate(-1)}
-              className={styles.testPage__backButton}
+              className={styles['finalize-page__button']}
           >
               <img
                   src={backIcon as string}
                   alt='back-icon'
-                  className={styles.testPage__backButtonIcon}
+                  className={styles['finalize-page__icon']}
               />
               Back
           </button>
