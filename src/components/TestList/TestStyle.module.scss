@@ -1,0 +1,36 @@
+.tableTitle {
+  display: flex;
+  align-items: center;
+  padding: 0 0 5px 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tableTitle__text {
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+  color: #999999;
+  cursor: pointer;
+}
+
+.tableTitle__name {
+  line-height: 15px;
+  font-weight: 500;
+  margin: 0;
+  width: 390px;
+}
+
+.tableTitle__type {
+  width: 100px;
+  margin-right: 25px;
+}
+
+.tableTitle__status {
+  width: 62px;
+  margin-right: 54px;
+}
+
+.tableTitle__text_type_url {
+  width: 125px;
+}

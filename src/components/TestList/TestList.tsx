@@ -1,29 +1,40 @@
 import {ListTitle} from "../../constants/constants";
 import ListItem from "../ListItem/ListItem";
 import {Site, Status, Test} from '../../types/types'
+import cx from 'classnames'
+import styles from './TestStyle.module.scss'
 
 
 interface TestListProps {
-    tests?: Test[]
-    sites: Site[]
+    tests?: Test[],
+    sites: Site[],
+    onFilterByName?: () => void,
+    onFilterByType?: () => void,
+    onFilterBySite?: () => void
 }
 
-export const TestList = ({tests, sites} : TestListProps) => {
+export const TestList = ({
+                             tests,
+                             sites,
+                             onFilterByName,
+                             onFilterByType,
+                             onFilterBySite,
+                         }: TestListProps) => {
     return (
         <div
-            // className={styles.table}
+            className={styles.table}
         >
             <div
-                // className={styles.tableTitle}
+                className={styles.tableTitle}
             >
                 <p
-                    // onClick={onFilterByName}
+                    onClick={onFilterByName}
                     className={cx(styles.tableTitle__text, styles.tableTitle__name)}
                 >
                     {ListTitle.NAME}
                 </p>
                 <p
-                    // onClick={onFilterByType}
+                    onClick={onFilterByType}
                     className={cx(styles.tableTitle__text, styles.tableTitle__type)}
                 >
                     {ListTitle.TYPE}
@@ -34,8 +45,8 @@ export const TestList = ({tests, sites} : TestListProps) => {
                     {ListTitle.STATUS}
                 </p>
                 <p
-                    // onClick={onFilterBySite}
-                    // className={cx(styles.tableTitle__text, styles.tableTitle__text_type_url)}
+                    onClick={onFilterBySite}
+                    className={cx(styles.tableTitle__text, styles.tableTitle__text_type_url)}
                 >
                     {ListTitle.SITE}
 

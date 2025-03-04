@@ -4,6 +4,7 @@ import Button from "../../containers/Button/Button";
 import {TestList} from "../../components/TestList/TestList";
 import { Site, Status, Test } from '../../types/types'
 import React, {useState} from "react";
+import { sortedListByName, sortedListBySite, sortedListByType } from '../../utils/utils';
 
 interface DashboardProps {
     tests: Test[]
@@ -12,12 +13,32 @@ interface DashboardProps {
 
 export const Dashboard = ({sites, tests} : DashboardProps ) => {
     const [search, setSearch] = useState<string>('')
+    const [ascending, setAscending] = useState<boolean>(true);
+    const [testsSorted, setTests] = useState<Test[]>(tests)
+    const [sitesSorted, setSites] = useState<Site[]>(sites)
     const handleSearch = (evt: React.ChangeEvent<HTMLInputElement>) =>{
         setSearch(evt.target.value)
     }
     const handleResetBtn = ()=>{
         setSearch('')
     }
+    const handleSortByName = () => {
+        setAscending((prevAscending) => !prevAscending);
+        const filteredList = sortedListByName(testsSorted, ascending)
+        setTests(filteredList);
+    };
+
+    const handleSortByType = () => {
+        setAscending((prevAscending) => !prevAscending);
+        const filteredList = sortedListByType(testsSorted, ascending)
+        setTests(filteredList);
+    };
+
+    const handleSortBySite = () => {
+        setAscending((prevAscending) => !prevAscending);
+        const filteredList = sortedListBySite(tests, ascending, sitesSorted)
+        setTests(filteredList);
+    };
     return (
         <div className={styles.dashboard}>
             <header>
@@ -30,8 +51,11 @@ export const Dashboard = ({sites, tests} : DashboardProps ) => {
             />
             {tests.length !== 0 ?
                 <TestList
-                   tests={tests}
+                   tests={testsSorted}
                    sites={sites}
+                   onFilterByName={handleSortByName}
+                   onFilterByType={handleSortByType}
+                   onFilterBySite={handleSortBySite}
                 />
                 : <div className={styles.plug}>
                 <h2 className={styles.plug__title}>
