@@ -21,3 +21,16 @@
 .testPage__backButtonIcon {
   margin-right: 19px;
 }
+.finalize-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1054px;
+  height: max-content;
+  margin:
+          0 auto;
+  background-color: #FAFAFA;
+  padding:
+          40px 48px;
+  min-height: 800px;
+
+}

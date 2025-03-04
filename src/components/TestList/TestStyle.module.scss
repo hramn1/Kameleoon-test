@@ -1,4 +1,9 @@
-.tableTitle {
+.test-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.testList {
   display: flex;
   align-items: center;
   padding: 0 0 5px 15px;
@@ -6,7 +11,7 @@
   color: inherit;
 }
 
-.tableTitle__text {
+.testList__text {
   font-size: 11px;
   line-height: 13px;
   margin: 0;
@@ -14,23 +19,23 @@
   cursor: pointer;
 }
 
-.tableTitle__name {
+.testList__name {
   line-height: 15px;
   font-weight: 500;
   margin: 0;
   width: 390px;
 }
 
-.tableTitle__type {
+.testList__type {
   width: 100px;
   margin-right: 25px;
 }
 
-.tableTitle__status {
+.testList__status {
   width: 62px;
   margin-right: 54px;
 }
 
-.tableTitle__text_type_url {
+.testList__text_type_url {
   width: 125px;
 }

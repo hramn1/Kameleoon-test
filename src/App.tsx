@@ -1,8 +1,9 @@
-import React, { useEffect, useState }  from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.module.scss';
 import {Dashboard} from "./pages/Dashboard/Dashboard";
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import {fetchAPI} from "./api/api";
+import {Finalize} from "./pages/Finalize/Finalize"
 
 import {Test, Site} from "./types/types";
 
@@ -24,20 +25,20 @@ function App() {
             })
             .catch((err) => console.log(err))
     }, [])
-  return (
-      <Router>
-        <Routes>
-          <Route path='/' element={
-            <Dashboard
-                sites={sites}
-                tests={tests}
-            />}
-          />
-            <Route path='/:state/:id' element={<TestPage />} />
-
-        </Routes>
-      </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path='/' element={
+                    <Dashboard
+                        sites={sites}
+                        tests={tests}
+                    />}
+                />
+                <Route path='/:state/:id' element={<Finalize
+                />}/>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

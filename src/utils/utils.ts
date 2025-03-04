@@ -68,3 +68,14 @@ export const sortedListBySite = (tests: Test[], ascending: boolean, sites: Site[
         return ascending ? asc.localeCompare(desc) : desc.localeCompare(asc);
     });
 }
+export const sortedListByStatus = (tests: Test[], ascending: boolean): Test[] => {
+    return [...tests].sort((a, b) => {
+        const status = {
+            ONLINE: 1,
+            PAUSED: 2,
+            STOPPED: 3,
+            DRAFT: 4,
+        }
+        return ascending ? status[a.status] - status[b.status] : status[b.status] - status[a.status];
+    });
+}

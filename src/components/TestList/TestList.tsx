@@ -1,6 +1,6 @@
 import {ListTitle} from "../../constants/constants";
 import ListItem from "../ListItem/ListItem";
-import {Site, Status, Test} from '../../types/types'
+import {Site, Test} from '../../types/types'
 import cx from 'classnames'
 import styles from './TestStyle.module.scss'
 
@@ -10,7 +10,8 @@ interface TestListProps {
     sites: Site[],
     onFilterByName?: () => void,
     onFilterByType?: () => void,
-    onFilterBySite?: () => void
+    onFilterBySite?: () => void,
+    onFilterByStatus?: () => void,
 }
 
 export const TestList = ({
@@ -19,42 +20,43 @@ export const TestList = ({
                              onFilterByName,
                              onFilterByType,
                              onFilterBySite,
+                             onFilterByStatus,
                          }: TestListProps) => {
     return (
-        <div
-            className={styles.table}
-        >
-            <div
-                className={styles.tableTitle}
-            >
+        <>
+            <div className={styles.testList}>
                 <p
                     onClick={onFilterByName}
-                    className={cx(styles.tableTitle__text, styles.tableTitle__name)}
+                    className={cx(styles.testList__text, styles.testList__name)}
                 >
                     {ListTitle.NAME}
                 </p>
                 <p
                     onClick={onFilterByType}
-                    className={cx(styles.tableTitle__text, styles.tableTitle__type)}
+                    className={cx(styles.testList__text, styles.testList__type)}
                 >
                     {ListTitle.TYPE}
                 </p>
                 <p
-                    className={cx(styles.tableTitle__text, styles.tableTitle__status)}
+                    onClick={onFilterByStatus}
+                    className={cx(styles.testList__text, styles.testList__status)}
                 >
                     {ListTitle.STATUS}
                 </p>
                 <p
                     onClick={onFilterBySite}
-                    className={cx(styles.tableTitle__text, styles.tableTitle__text_type_url)}
+                    className={cx(styles.testList__text, styles.testList__text_type_url)}
                 >
                     {ListTitle.SITE}
 
                 </p>
             </div>
-            {tests?.map((test: Test) => (
-                <ListItem key={test.id} test={test} sites={sites}/>
-            ))}
-        </div>
+            <ul className={styles['test-list']}>
+                {tests?.map((test: Test) => (
+                    <ListItem key={test.id} test={test} sites={sites}/>
+                ))}
+            </ul>
+        </>
+
     )
 }
